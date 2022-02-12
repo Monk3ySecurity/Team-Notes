@@ -22,7 +22,7 @@ File metadata read/write tool <br>
 `exiftool -b image.png`
 
 ## Stegdetect
-Tool that detects possible steganography methods used on an jpg image, based on sensitivity value provided <br>
+Tool that detects possible steganography methods used on an JPG image, based on sensitivity value provided <br>
 `stegdetect -s 10 image.jpg` <br>
 
 ## Zsteg
@@ -44,8 +44,13 @@ Searches for embedded files inside other files and extracts them using header, f
 `foremost -i image.png -v`
 
 ## Steghide
+[Steghide](https://linuxhint.com/steghide-beginners-tutorial/), tool that can hide secret data inside an image and extract it <br>
 `steghide --info TryHackMe.jpg` <br>
 `steghide extract -sf TryHackMe.jpg`
+
+## Stegsolve
+Tool that has few neat features like stereogram solver, image combiner, frame browser and different bit planes view <br>
+`stegsolve -jar stegsolve.jar`
 
 # ADS NTFS Streams
 
