@@ -9,7 +9,10 @@ Easy install popular stego tools like jphide, jsteg, stegdetect, f5, outguess, s
 
 # Images
 
-Online Analyzer: https://aperisolve.fr/
+Online Analyzer: <br>
+https://aperisolve.fr/  <br>
+https://29a.ch/photo-forensics <br>
+
 
 https://book.hacktricks.xyz/stego/stego-tricks
 
@@ -31,11 +34,18 @@ Secret data extractor that uses LSB steganography method in JPG files <br>
 `jsteg reveal image.jpg secret.txt` <br>
 `cat secret.txt`
 
+## Binwalk
+Searches for embedded files inside other files and extracts them using file signatures<br>
+`binwalk -e image.jpg` <br>
+`binwalk -e --dd=".*" image.jpg`
+
+## Foremost
+Searches for embedded files inside other files and extracts them using header, footer and internal data structure signatures <br>
+`foremost -i image.png -v`
+
 ## Steghide
-```bash
-steghide --info TryHackMe.jpg
-steghide extract -sf TryHackMe.jpg
-```
+`steghide --info TryHackMe.jpg` <br>
+`steghide extract -sf TryHackMe.jpg`
 
 # ADS NTFS Streams
 
