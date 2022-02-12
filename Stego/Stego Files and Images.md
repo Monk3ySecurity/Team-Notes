@@ -7,14 +7,20 @@ Easy install popular stego tools like jphide, jsteg, stegdetect, f5, outguess, s
 `./stegdetect.sh`
 
 
-# Images
-
 Online Analyzer: <br>
 https://aperisolve.fr/  <br>
 https://29a.ch/photo-forensics <br>
 
 
 https://book.hacktricks.xyz/stego/stego-tricks
+
+## File type identification
+Sometimes file type is not known. Usually file has lost it's integrity or extension is not known. <br>
+This [resource](https://www.garykessler.net/library/file_sigs.html) can be used as a reference for file signatures. <br>
+`file unknownfile` <br>
+`xxd unkownfile | head` <br>
+`xxd unknownfile | tail` <br>
+`strings unknownfile | more`
 
 ## Exiftool
 File metadata read/write tool <br>
