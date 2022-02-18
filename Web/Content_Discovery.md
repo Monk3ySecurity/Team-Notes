@@ -1,5 +1,13 @@
 Web content discovery is important step in the web enumeration phase. Often times brute forcing for directories, files and subdomains is very effective using good wordlists, such as [SecLists](https://github.com/danielmiessler/SecLists).
 
+# Best Practice Wordlists
+
+`seclists/Discovery/Web-Content/common.txt` for a quick scan and to find also files (because there are also extensions included!)
+`seclists/Discovery/Web-Content/raft-smal-words.txt` second scan
+`secLists/Discovery/Web-Content/directory-list-2.3-small.txt` third scan
+
+Dont forget to check for extensions like .php .bak and other files!
+
 
 # Manual discovery
 `curl http://SERVER_IP:PORT/`
@@ -35,6 +43,8 @@ Web content discovery is important step in the web enumeration phase. Often time
 
 `gobuster dir -t 40 -w /opt/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt --url http://SERVER_IP:PORT -x .log,txt,zip,xml`
 
+`feroxbuster -u http://SERVER_IP:PORT -w /usr/share/seclists/Discovery/Web-Content/raft-small-words.txt`
+
 
 # Subdomain discovery via VHOST
 `ffuf -w /opt/SecLists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://DOMAIN.NAME:PORT/ -H "Host: FUZZ.DOMAIN.NAME:PORT/" -mc 200`
@@ -45,4 +55,12 @@ Web content discovery is important step in the web enumeration phase. Often time
 
 [phonebook.cz](https://phonebook.cz/) - great online resource for subdomain and file discovery.
 
+[dnsdumpster.com](https://dnsdumpster.com/) - great online resource for subdomain tree view.
+
+[crt.sh](https://crt.sh/) - search for certificats.
+
+[Sublist3r](https://github.com/aboul3la/Sublist3r) - on premise tools for subdomain searh.
+
 `amass enum -active -brute -d DOMAIN.NAME`
+
+
