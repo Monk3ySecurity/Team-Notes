@@ -3,8 +3,10 @@ Web content discovery is important step in the web enumeration phase. Often time
 # Best Practice Wordlists
 
 `seclists/Discovery/Web-Content/common.txt` for a quick scan and to find also files (because there are also extensions included!)
+
 `seclists/Discovery/Web-Content/raft-smal-words.txt` second scan
-`secLists/Discovery/Web-Content/directory-list-2.3-small.txt` third scan
+
+`seclists/Discovery/Web-Content/directory-list-2.3-small.txt` third scan
 
 Dont forget to check for extensions like .php .bak and other files!
 
