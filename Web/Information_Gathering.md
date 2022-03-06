@@ -31,4 +31,4 @@ Web app vulnerability scanner and information gathering tool.
 # Nmap
 Among many other things, nmap can be used for web information gathering.  
 `nmap -sV -sC SERVER -p 80,443`  
-`nmap -p80,443 --scripts http-php-version,http-methods,http-headers,http-errors,http-vhosts SERVER` 
+`nmap -p80,443 --script http-php-version,http-methods,http-headers,http-errors,http-vhosts SERVER` 
