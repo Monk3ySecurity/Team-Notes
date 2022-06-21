@@ -9,7 +9,7 @@ Easy install popular stego tools like jphide, jsteg, stegdetect, f5, outguess, s
 Online Analyzers  
 https://aperisolve.fr/  
 https://29a.ch/photo-forensics  
-
+http://magiceye.ecksdee.co.uk/
 
 https://book.hacktricks.xyz/stego/stego-tricks  
 
@@ -20,6 +20,9 @@ This [resource](https://www.garykessler.net/library/file_sigs.html) can be used 
 `xxd unkownfile | head`  
 `xxd unknownfile | tail`  
 `strings unknownfile | more`  
+`strings -n 6 -t x file.ext | more`  
+`strings file.ext | tr '[A-Za-z]' '[N-ZA-Mn-za-m]' | more`  
+`cat image.png | tr -c [:graph:] " " | tr -s " " | xargs -P 5 -n 2  | more`  
 
 ## Exiftool
 File metadata read/write tool  
